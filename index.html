@@ -2182,6 +2182,14 @@ function setLang(lang) {
     document.getElementById('dbtn-' + l)?.classList.toggle('active', l === lang);
   });
 
+  // Hero headline especial (tiene span anidado)
+  const heroH = document.querySelector('.hero-headline');
+  if (heroH) {
+    heroH.innerHTML = lang === 'es'
+      ? 'PROTECCIÓN Y TRANSPARENCIA<br>PARA <span class="hl-gold">TU FUTURO</span>'
+      : 'PROTECTION AND TRANSPARENCY<br>FOR <span class="hl-gold">YOUR FUTURE</span>';
+  }
+
   // Update <html lang>
   document.documentElement.lang = lang;
 
