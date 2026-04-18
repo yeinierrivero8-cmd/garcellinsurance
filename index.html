@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garcell Insurance & Taxes | Franquicia WeDo | Miami, FL</title>
+  <meta name="description" content="Garcell Insurance & Taxes - Franquicia WeDo. Seguros de salud, auto, vida y preparación de impuestos en Miami, FL. (832) 763-5760">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+  /* ════════════════════════════════════════════════
+     RESET & CUSTOM PROPERTIES
+  ════════════════════════════════════════════════ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --blue:        #2563eb;
+    --blue-hover:  #1d4ed8;
+    --blue-light:  #eff6ff;
+    --blue-mid:    #3b82f6;
+    --teal:        #06d6a0;
+    --teal-hover:  #05c490;
+    --teal-light:  #f0fdf9;
+    --gold:        #d4a132;
+    --gold-hover:  #c48e20;
+    --gold-light:  #fef9eb;
+    --dark:        #0f1f3d;
+    --dark2:       #1e3a5f;
+    --gray-800:    #1e293b;
+    --gray-600:    #475569;
+    --gray-400:    #94a3b8;
+    --gray-200:    #e2e8f0;
+    --gray-100:    #f1f5f9;
+    --white:       #ffffff;
+    --pearl:       #f7f9fe;
+    --radius-sm:   8px;
+    --radius:      14px;
+    --radius-lg:   22px;
+    --shadow-sm:   0 2px 8px rgba(0,0,0,.07);
+    --shadow:      0 6px 24px rgba(0,0,0,.10);
+    --shadow-lg:   0 16px 56px rgba(0,0,0,.14);
+    --shadow-gold: 0 8px 32px rgba(212,161,50,.35);
+    --transition:  .25s ease;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--gray-800);
+    background: var(--white);
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  img { display: block; max-width: 100%; }
+
+  /* ════════════════════════════════════════════════
+     UTILITIES
+  ════════════════════════════════════════════════ */
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .sec { padding: 6rem 0; }
+  .sec-alt { background: var(--gray-100); }
+
+  .tag-pill {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--blue-light), #e0ecff);
+    color: var(--blue);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    padding: .32rem .9rem;
+    border-radius: 50px;
+    margin-bottom: .9rem;
+  }
+
+  .sec-head { margin-bottom: 3rem; }
+  .sec-head.center { text-align: center; }
+  .sec-head.center .sec-sub { margin: 0 auto; }
+
+  .sec-title {
+    font-size: clamp(1.75rem, 3.8vw, 2.55rem);
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1.18;
+    margin-bottom: .65rem;
+  }
+  .sec-title em { font-style: normal; color: var(--blue); }
+
+  .sec-sub {
+    font-size: 1rem;
+    color: var(--gray-600);
+    max-width: 560px;
+    line-height: 1.75;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .82rem 1.9rem;
+    border-radius: 50px;
+    font-size: .95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition), opacity var(--transition);
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn-blue {
+    background: var(--blue);
+    color: var(--white);
+    box-shadow: 0 4px 20px rgba(0,82,204,.32);
+  }
+  .btn-blue:hover { background: var(--blue-hover); box-shadow: 0 8px 30px rgba(0,82,204,.42); }
+
+  .btn-teal {
+    background: linear-gradient(135deg, #f5c842, #d4a132);
+    color: #0f1f3d;
+    box-shadow: 0 4px 20px rgba(212,161,50,.4);
+    font-weight: 800;
+  }
+  .btn-teal:hover { background: linear-gradient(135deg, #fde047, #f5c842); box-shadow: 0 8px 30px rgba(212,161,50,.55); transform: translateY(-2px); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,.55);
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,.12); }
+
+  .btn-outline-blue {
+    background: transparent;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+  }
+  .btn-outline-blue:hover { background: var(--blue); color: var(--white); }
+
+  /* Divider */
+  .divider {
+    width: 52px; height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--teal));
+    border-radius: 4px;
+    margin-bottom: 1.4rem;
+  }
+  .center .divider { margin-left: auto; margin-right: auto; }
+
+  /* ════════════════════════════════════════════════
+     NAVBAR
+  ════════════════════════════════════════════════ */
+  #nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.1rem 0;
+    transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+  }
+
+  #nav.solid {
+    background: var(--white);
+    box-shadow: 0 2px 18px rgba(0,0,0,.09);
+    padding: .7rem 0;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  /* Logo */
+  .logo { display: flex; align-items: center; gap: .9rem; text-decoration: none; flex-shrink: 0; }
+
+  .logo-mark {
+    width: 48px; height: 48px;
+    background: linear-gradient(145deg, #1a3a6e 0%, #2563eb 60%, #1e40af 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(37,99,235,.45), inset 0 1px 0 rgba(255,255,255,.15);
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-mark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,.12) 0%, transparent 60%);
+    border-radius: inherit;
+  }
+  .logo-mark-icon {
+    font-size: 1.45rem;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,.3));
+  }
+
+  .logo-copy { line-height: 1.15; }
+
+  .logo-name {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--dark);
+    letter-spacing: -.2px;
+    transition: color var(--transition);
+  }
+  #nav.solid .logo-name { color: var(--dark); }
+
+  .logo-sub {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+  }
+  .logo-sub-wedo {
+    background: linear-gradient(90deg, var(--gold), #f5c842);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .logo-sub-dot { color: var(--gold); -webkit-text-fill-color: var(--gold); }
+
+  /* Nav links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.9rem;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-decoration: none;
+    position: relative;
+    transition: color var(--transition);
+  }
+  #nav.solid .nav-links a { color: var(--gray-600); }
+  .nav-links a:hover { color: var(--blue); }
+  #nav.solid .nav-links a:hover { color: var(--blue); }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: 50px;
+    padding: .25rem;
+    gap: .15rem;
+    flex-shrink: 0;
+    transition: background var(--transition), border var(--transition);
+  }
+  #nav.solid .lang-toggle {
+    background: var(--gray-100);
+    border-color: var(--gray-200);
+  }
+
+  .lang-btn {
+    padding: .3rem .75rem;
+    border-radius: 50px;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--gray-400);
+    font-family: inherit;
+    transition: background var(--transition), color var(--transition);
+  }
+  #nav.solid .lang-btn { color: var(--gray-400); }
+
+  .lang-btn.active {
+    background: var(--blue);
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(0,82,204,.35);
+  }
+
+  /* Nav right */
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .nav-cta { font-size: .85rem; padding: .65rem 1.4rem; }
+
+  /* Hamburger */
+  .ham {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: .35rem;
+  }
+  .ham span {
+    display: block; width: 23px; height: 2px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: transform .3s, opacity .3s, background var(--transition);
+  }
+  #nav.solid .ham span { background: var(--dark); }
+  .ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .ham.open span:nth-child(2) { opacity: 0; }
+  .ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile drawer */
+  .drawer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--white);
+    z-index: 998;
+    padding: 5.5rem 1.5rem 2rem;
+    flex-direction: column;
+  }
+  .drawer.open { display: flex; }
+
+  .drawer ul { list-style: none; flex: 1; }
+  .drawer ul li { border-bottom: 1px solid var(--gray-200); }
+  .drawer ul li a {
+    display: block;
+    padding: 1.1rem 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .drawer ul li a:hover { color: var(--blue); }
+
+  .drawer-foot {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    margin-top: 2rem;
+  }
+  .drawer-foot .btn { justify-content: center; }
+
+  .drawer-lang {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: 1rem;
+    font-size: .85rem;
+    color: var(--gray-600);
+    font-weight: 500;
+  }
+  .drawer-lang button {
+    padding: .35rem .9rem;
+    border-radius: 50px;
+    font-size: .8rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid var(--gray-200);
+    background: transparent;
+    color: var(--gray-600);
+    font-family: inherit;
+    transition: all .2s;
+  }
+  .drawer-lang button.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+  /* ════════════════════════════════════════════════
+     HERO — Split background, dark overlay, centered text
+  ════════════════════════════════════════════════ */
+  #hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Split background: two photos side by side */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg-left {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1600&q=85') center/cover no-repeat;
+  }
+  .hero-bg-right { display: none; }
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(6,14,32,.75) 0%, rgba(8,18,42,.68) 70%, rgba(6,14,32,.85) 100%);
+  }
+
+  /* Main content area */
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 7rem 2rem 3rem;
+    width: 100%;
+  }
+
+  /* Badge Franquicia */
+  .hero-franchise-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(212,161,50,.55);
+    color: #fde68a;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: .45rem 1.4rem;
+    border-radius: 50px;
+    margin-bottom: 2.4rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .pulse-dot {
+    width: 7px; height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pls 2s infinite;
+  }
+  @keyframes pls { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.5)} }
+  @keyframes glowGold {
+    0%,100% { box-shadow: 0 0 0 8px rgba(212,161,50,.2), 0 8px 40px rgba(0,0,0,.5); }
+    50%      { box-shadow: 0 0 0 14px rgba(212,161,50,.35), 0 8px 50px rgba(0,0,0,.6), 0 0 40px rgba(212,161,50,.2); }
+  }
+
+  /* Main headline */
+  .hero-headline {
+    font-size: clamp(2.2rem, 5.2vw, 4rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -.5px;
+    text-shadow: 0 2px 24px rgba(0,0,0,.5);
+    max-width: 820px;
+  }
+  .hero-headline .hl-gold {
+    color: #f5c842;
+    text-shadow: 0 0 30px rgba(245,200,66,.4), 0 2px 24px rgba(0,0,0,.5);
+  }
+
+  /* Subtitle */
+  .hero-subtitle {
+    font-size: clamp(.95rem, 2vw, 1.18rem);
+    color: rgba(255,255,255,.82);
+    margin-bottom: 2.8rem;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* CTA buttons row */
+  .hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2.8rem;
+  }
+
+  .btn-hero-outline {
+    padding: .88rem 2.3rem;
+    border: 2px solid rgba(255,255,255,.72);
+    color: white;
+    background: rgba(255,255,255,.08);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: .95rem;
+    letter-spacing: .5px;
+    text-decoration: none;
+    transition: all .25s;
+    backdrop-filter: blur(6px);
+  }
+  .btn-hero-outline:hover { background: rgba(255,255,255,.2); border-color: white; }
+
+  .btn-hero-gold {
+    padding: .88rem 2.3rem;
+    border: 2px solid var(--gold);
+    background: var(--gold);
+    color: #0f1f3d;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: .95rem;
+    letter-spacing: .5px;
+    text-decoration: none;
+    transition: all .25s;
+  }
+  .btn-hero-gold:hover { background: var(--gold-hover); border-color: var(--gold-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,161,50,.4); }
+
+  /* Stats bar — fixed at bottom of hero */
+  .hero-stats {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 0;
+    background: white;
+    border-top: 3px solid var(--gold);
+    overflow: hidden;
+    box-shadow: 0 -4px 20px rgba(0,0,0,.15);
+  }
+
+  .hero-stat {
+    flex: 1;
+    padding: 1.3rem 1.5rem;
+    border-right: 1px solid var(--gray-200);
+    text-align: center;
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat strong { display: block; font-size: 1.75rem; font-weight: 800; color: var(--blue); }
+  .hero-stat span   { font-size: .78rem; color: var(--gray-400); }
+
+  /* Navbar — texto blanco sobre hero oscuro */
+  #nav:not(.solid) .logo-name { color: white; }
+  #nav:not(.solid) .logo-sub  { color: rgba(255,255,255,.7); }
+  #nav:not(.solid) .nav-links a { color: rgba(255,255,255,.85); }
+  #nav:not(.solid) .nav-links a:hover { color: white; }
+  #nav:not(.solid) .ham span { background: white; }
+  #nav:not(.solid) .lang-btn { color: rgba(255,255,255,.75); }
+  #nav:not(.solid) .lang-toggle { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.2); }
+  #nav:not(.solid) .lang-btn.active { background: var(--gold); color: var(--dark); box-shadow: 0 2px 8px rgba(212,161,50,.4); }
+
+  /* ════════════════════════════════════════════════
+     SERVICES
+  ════════════════════════════════════════════════ */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .svc-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2.1rem 1.8rem;
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+
+  .svc-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--teal));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .svc-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); }
+  .svc-card:hover::after { transform: scaleX(1); }
+
+  .svc-card-ico {
+    width: 64px; height: 64px;
+    border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.3rem;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .svc-card-ico svg { width: 36px; height: 36px; }
+  .svc-ico-auto svg { width: 44px; height: 28px; }
+
+  /* Colors */
+  .svc-ico-health { background: linear-gradient(135deg, #ffe4e6, #fecdd3); }
+  .svc-ico-auto   { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+  .svc-ico-home   { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+  .svc-ico-life   { background: linear-gradient(135deg, #ffe4e6, #fecdd3); }
+  .svc-ico-tax    { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+  .svc-ico-itin   { background: linear-gradient(135deg, #e0f2fe, #bae6fd); }
+
+  /* ── Icon animations ── */
+
+  /* Health: EKG wave draws itself across */
+  @keyframes ekgDraw {
+    0%   { stroke-dashoffset: 80; }
+    60%  { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -80; }
+  }
+  .svc-ico-health .ekg-path {
+    stroke: #e11d48; stroke-width: 1.8; fill: none;
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: ekgDraw 2s ease-in-out infinite;
+  }
+
+  /* Auto: car slides left→right */
+  @keyframes carDrive {
+    0%   { transform: translateX(-4px); }
+    50%  { transform: translateX(4px); }
+    100% { transform: translateX(-4px); }
+  }
+  .svc-ico-auto svg { animation: carDrive 1.8s ease-in-out infinite; color: #1d4ed8; }
+
+  /* Home: gentle bounce */
+  @keyframes homeBounce {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-5px); }
+  }
+  .svc-ico-home svg { animation: homeBounce 2.2s ease-in-out infinite; color: #059669; }
+
+  /* Life: heartbeat pulse */
+  @keyframes heartBeat {
+    0%,100% { transform: scale(1); }
+    14%     { transform: scale(1.25); }
+    28%     { transform: scale(1); }
+    42%     { transform: scale(1.15); }
+    56%     { transform: scale(1); }
+  }
+  .svc-ico-life svg { animation: heartBeat 1.4s ease-in-out infinite; color: #e11d48; }
+
+  /* Tax: document flick up */
+  @keyframes docFlick {
+    0%,100% { transform: rotate(0deg) scale(1); }
+    25%     { transform: rotate(-4deg) scale(1.08); }
+    75%     { transform: rotate(4deg) scale(1.08); }
+  }
+  .svc-ico-tax svg { animation: docFlick 2.5s ease-in-out infinite; color: #d97706; }
+
+  /* ITIN: spin the clock hand */
+  @keyframes clockSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .svc-ico-itin .clock-hand {
+    transform-origin: 12px 12px;
+    animation: clockSpin 2s linear infinite;
+  }
+  .svc-ico-itin .clock-body { color: #0284c7; }
+
+  .svc-card h3 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: .5rem;
+  }
+
+  .svc-card p {
+    font-size: .88rem;
+    color: var(--gray-600);
+    line-height: 1.75;
+  }
+
+  .svc-card-tag {
+    display: inline-block;
+    margin-top: 1.1rem;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: var(--blue);
+    background: var(--blue-light);
+    padding: .25rem .8rem;
+    border-radius: 50px;
+  }
+
+  /* ════════════════════════════════════════════════
+     WHY US
+  ════════════════════════════════════════════════ */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .why-visual { position: relative; }
+
+  .why-img {
+    border-radius: var(--radius-lg);
+    aspect-ratio: 1 / 1;
+    max-width: 460px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 70px rgba(15,31,61,.25), 0 0 0 4px rgba(212,161,50,.2);
+    animation: whyPulse 4s ease-in-out infinite;
+  }
+  @keyframes whyPulse {
+    0%,100% { box-shadow: 0 20px 70px rgba(15,31,61,.25), 0 0 0 4px rgba(212,161,50,.2); }
+    50%     { box-shadow: 0 28px 90px rgba(15,31,61,.35), 0 0 0 8px rgba(212,161,50,.35); }
+  }
+  .why-img img { transition: transform 6s ease; }
+  .why-img:hover img { transform: scale(1.06); }
+
+  /* Overlay gradient on photo */
+  .why-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15,31,61,.55) 0%, transparent 50%);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  /* Badge inside photo */
+  .why-img-caption {
+    position: absolute;
+    bottom: 1.4rem; left: 1.4rem; right: 1.4rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 14px;
+    padding: .85rem 1.1rem;
+    animation: slideUp .8s ease .4s both;
+  }
+  @keyframes slideUp {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .why-img-caption-ico {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--gold), #f5c842);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+  }
+  .why-img-caption strong { color: white; font-size: 1rem; font-weight: 800; display: block; }
+  .why-img-caption span   { color: rgba(255,255,255,.75); font-size: .72rem; }
+
+  .why-float {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.15rem 1.5rem;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    min-width: 138px;
+    z-index: 2;
+  }
+  .why-float strong {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .why-float span { font-size: .78rem; color: var(--gray-400); }
+
+  .why-items { list-style: none; }
+  .why-item {
+    display: flex;
+    gap: 1.1rem;
+    margin-bottom: 1.7rem;
+    transition: transform var(--transition);
+  }
+  .why-item:hover { transform: translateX(4px); }
+
+  .why-icon {
+    width: 46px; height: 46px;
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+    border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white);
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .why-item h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: .28rem;
+  }
+  .why-item p { font-size: .875rem; color: var(--gray-600); line-height: 1.7; }
+
+  /* ════════════════════════════════════════════════
+     TESTIMONIALS
+  ════════════════════════════════════════════════ */
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .test-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem 1.8rem;
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .test-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+
+  .stars { color: #f59e0b; font-size: .95rem; letter-spacing: 2px; }
+
+  .test-text {
+    font-size: .925rem;
+    color: var(--gray-600);
+    line-height: 1.8;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .test-author { display: flex; align-items: center; gap: .85rem; }
+
+  .test-av {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white);
+    font-size: .9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .test-name { font-size: .93rem; font-weight: 700; color: var(--dark); }
+  .test-loc  { font-size: .78rem; color: var(--gray-400); }
+
+  /* ════════════════════════════════════════════════
+     CONTACT
+  ════════════════════════════════════════════════ */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  .contact-info-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: .85rem;
+  }
+  .contact-info-desc {
+    font-size: .925rem;
+    color: var(--gray-600);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+
+  .ci-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .ci-ico {
+    width: 44px; height: 44px;
+    background: var(--blue-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .ci-label { font-size: .78rem; font-weight: 600; color: var(--gray-400); margin-bottom: .18rem; text-transform: uppercase; letter-spacing: .6px; }
+  .ci-val   { font-size: .93rem; font-weight: 600; color: var(--dark); }
+  .ci-val a { color: var(--blue); text-decoration: none; }
+  .ci-val a:hover { text-decoration: underline; }
+
+  /* Form card */
+  .cf-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2.2rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-200);
+  }
+
+  .cf-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1.75rem;
+  }
+
+  .fg { margin-bottom: 1.2rem; }
+
+  .fg label {
+    display: block;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: .38rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+
+  .fg input, .fg select, .fg textarea {
+    width: 100%;
+    padding: .82rem 1.05rem;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font-size: .93rem;
+    font-family: inherit;
+    color: var(--dark);
+    background: var(--white);
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  .fg input:focus, .fg select:focus, .fg textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(0,82,204,.11);
+  }
+  .fg textarea { resize: vertical; min-height: 115px; }
+
+  .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .btn-send { width: 100%; justify-content: center; padding: 1rem; font-size: .97rem; margin-top: .4rem; }
+
+  .form-note {
+    font-size: .75rem;
+    color: var(--gray-400);
+    text-align: center;
+    margin-top: .8rem;
+    line-height: 1.55;
+  }
+
+  /* ════════════════════════════════════════════════
+     FOOTER
+  ════════════════════════════════════════════════ */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,.6);
+  }
+
+  .footer-top { padding: 4.5rem 0 3rem; }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand .logo-name { color: var(--white) !important; }
+  .footer-brand .logo-sub  { color: var(--teal); }
+
+  .footer-brand-desc {
+    font-size: .875rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,.45);
+    margin: 1.1rem 0 1.6rem;
+  }
+
+  .socials { display: flex; gap: .6rem; }
+
+  .soc-link {
+    width: 38px; height: 38px;
+    border-radius: 9px;
+    background: rgba(255,255,255,.07);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    text-decoration: none;
+    color: rgba(255,255,255,.6);
+    transition: background .2s, color .2s, transform .2s;
+  }
+  .soc-link:hover { background: var(--teal); color: var(--dark); transform: translateY(-3px); }
+
+  .footer-col h4 {
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+    letter-spacing: .3px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: .6rem; }
+  .footer-col ul li a {
+    font-size: .85rem;
+    color: rgba(255,255,255,.45);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-col ul li a:hover { color: var(--teal); }
+
+  .footer-col address {
+    font-style: normal;
+    font-size: .85rem;
+    color: rgba(255,255,255,.45);
+    line-height: 1.8;
+  }
+  .footer-col address a { color: rgba(255,255,255,.45); text-decoration: none; }
+  .footer-col address a:hover { color: var(--teal); }
+
+  .footer-license {
+    background: rgba(255,255,255,.05);
+    border-top: 2px solid var(--gold);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    padding: 1.6rem 0;
+    text-align: center;
+  }
+  .footer-license .lic-label {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: .7rem;
+  }
+  .footer-license .lic-states {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem .4rem;
+  }
+  .footer-license .lic-state {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 6px;
+    padding: .35rem .85rem;
+    font-size: .82rem;
+    color: rgba(255,255,255,.85);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding: 1.4rem 0;
+  }
+
+  .footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    font-size: .78rem;
+    color: rgba(255,255,255,.3);
+  }
+
+  .footer-bottom-inner a { color: var(--teal); text-decoration: none; }
+
+  /* ════════════════════════════════════════════════
+     SCROLL-TO-TOP
+  ════════════════════════════════════════════════ */
+  #stt {
+    position: fixed;
+    bottom: 1.8rem; right: 1.8rem;
+    width: 44px; height: 44px;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(0,82,204,.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, transform .2s;
+    z-index: 400;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #stt.show { opacity: 1; pointer-events: auto; }
+  #stt:hover { transform: translateY(-3px); }
+
+  /* ════════════════════════════════════════════════
+     FADE-IN ANIMATION
+  ════════════════════════════════════════════════ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ════════════════════════════════════════════════
+     EXTENDED ANIMATIONS
+  ════════════════════════════════════════════════ */
+  @keyframes heroGradShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes shimmerText {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-10px); }
+  }
+  @keyframes floatPart {
+    0%   { transform: translateY(0) translateX(0) scale(1); opacity: .1; }
+    33%  { transform: translateY(-50px) translateX(18px) scale(1.3); opacity: .28; }
+    66%  { transform: translateY(-22px) translateX(-12px) scale(.85); opacity: .14; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: .1; }
+  }
+  @keyframes bounceScroll {
+    0%, 100% { transform: translateY(0); opacity: .45; }
+    50%       { transform: translateY(10px); opacity: .9; }
+  }
+  @keyframes glowLogo {
+    0%, 100% { box-shadow: 0 4px 12px rgba(0,82,204,.3), 0 0 18px rgba(0,212,170,.15); }
+    50%       { box-shadow: 0 6px 28px rgba(0,82,204,.65), 0 0 40px rgba(0,212,170,.4); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(34px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes rotSlow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes cardReveal {
+    from { opacity: 0; transform: translateY(24px) scale(.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Hero animated bg */
+  .hero-bg {
+    background: linear-gradient(135deg, #0b1d35 0%, #0034cc 40%, #003850 70%, #001833 100%) !important;
+    background-size: 300% 300% !important;
+    animation: heroGradShift 14s ease infinite !important;
+  }
+
+  /* Shimmer highlight — gold over light bg */
+  .hl {
+    background: linear-gradient(90deg, #d4a132 15%, #f5c842 38%, #e0a832 55%, #c9901e 75%, #d4a132 90%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmerText 3s linear infinite;
+  }
+
+  /* Logo glow */
+  .logo-mark { animation: glowLogo 3s ease-in-out infinite; }
+
+  /* Hero stagger */
+  .hero-anim {
+    opacity: 0;
+    animation: fadeUp .75s ease-out forwards;
+  }
+
+  /* Particles */
+  .hero-particles { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+  .hero-particles span {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(37,99,235,.18);
+  }
+
+  /* Scroll indicator */
+  .scroll-cue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(15,31,61,.35);
+    font-size: .68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    animation: bounceScroll 1.7s ease-in-out infinite;
+    margin-top: 2.5rem;
+  }
+  .scroll-cue svg { width: 18px; height: 18px; }
+
+  /* Service cards stagger via JS class */
+  .svc-card.card-in {
+    animation: cardReveal .55s ease-out forwards;
+  }
+  .svc-card { opacity: 0; }
+
+  /* Why visual ring */
+  .why-ring {
+    position: absolute;
+    inset: -18px;
+    border-radius: var(--radius-lg);
+    border: 2px dashed rgba(0,212,170,.25);
+    animation: rotSlow 22s linear infinite;
+    pointer-events: none;
+  }
+
+  /* ════════════════════════════════════════════════
+     RESPONSIVE
+  ════════════════════════════════════════════════ */
+  @media (max-width: 960px) {
+    .hero-inner  { padding: 6rem 1.5rem 2.5rem; }
+    .hero-headline { font-size: clamp(2rem, 6vw, 3rem); }
+    .why-grid    { grid-template-columns: 1fr; gap: 3rem; }
+    .why-visual  { order: -1; }
+    .why-img     { max-width: 100%; }
+    .why-float   { bottom: 1rem; right: 1rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-grid  { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .sec { padding: 3.8rem 0; }
+    .nav-links, .nav-cta, .lang-toggle { display: none; }
+    .ham { display: flex; }
+    .hero-inner { padding: 5.5rem 1.2rem 2rem; }
+    .hero-headline { font-size: clamp(1.8rem, 7.5vw, 2.4rem); }
+    .hero-cta-row { flex-direction: column; align-items: center; }
+    .btn-hero-outline, .btn-hero-gold { width: 100%; max-width: 280px; text-align: center; }
+    .hero-stats { flex-direction: column; gap: 0; }
+    .hero-stat { border-right: none; border-bottom: 1px solid var(--gray-200); }
+    .hero-stat:last-child { border-bottom: none; }
+    .fg-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom-inner { flex-direction: column; text-align: center; }
+    .why-float { right: 0; }
+  }
+  /* ── Consulta Modal ── */
+  .cmodal-backdrop {
+    display: none;
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(6,14,32,.65);
+    backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+  }
+  .cmodal-backdrop.open { display: flex; }
+  .cmodal {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem 2rem;
+    max-width: 420px; width: 92%;
+    text-align: center;
+    box-shadow: 0 24px 80px rgba(0,0,0,.35);
+    animation: fadeUp .3s ease;
+    position: relative;
+  }
+  .cmodal-close {
+    position: absolute; top: 1rem; right: 1.1rem;
+    background: none; border: none; font-size: 1.4rem;
+    cursor: pointer; color: var(--gray-400); line-height: 1;
+  }
+  .cmodal-close:hover { color: var(--dark); }
+  .cmodal-avatar {
+    width: 70px; height: 70px; border-radius: 50%;
+    object-fit: cover; object-position: center top;
+    border: 3px solid var(--gold);
+    margin: 0 auto 1rem;
+    display: block;
+  }
+  .cmodal h3 { font-size: 1.2rem; font-weight: 800; color: var(--dark); margin-bottom: .35rem; }
+  .cmodal p  { font-size: .88rem; color: var(--gray-600); margin-bottom: 1.8rem; line-height: 1.6; }
+  .cmodal-actions { display: flex; flex-direction: column; gap: .85rem; }
+  .cmodal-btn {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.4rem; border-radius: 14px;
+    text-decoration: none; font-weight: 700; font-size: .95rem;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .cmodal-btn:hover { transform: translateY(-2px); }
+  .cmodal-btn-wa {
+    background: linear-gradient(135deg, #25d366, #128c4e);
+    color: white;
+    box-shadow: 0 6px 20px rgba(37,211,102,.35);
+  }
+  .cmodal-btn-wa:hover { box-shadow: 0 10px 28px rgba(37,211,102,.5); }
+  .cmodal-btn-email {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    box-shadow: 0 6px 20px rgba(37,99,235,.3);
+  }
+  .cmodal-btn-email:hover { box-shadow: 0 10px 28px rgba(37,99,235,.45); }
+  .cmodal-btn-ico {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: rgba(255,255,255,.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+  }
+  .cmodal-btn-text { text-align: left; }
+  .cmodal-btn-label { font-size: .68rem; opacity: .8; font-weight: 500; display: block; }
+  .cmodal-btn-val   { font-size: .95rem; font-weight: 800; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ CONSULTA MODAL ═══════════════════════════ -->
+<div class="cmodal-backdrop" id="consultaModal" onclick="closeConsulta(event)">
+  <div class="cmodal">
+    <button class="cmodal-close" onclick="closeConsultaBtn()">✕</button>
+    <img src="liset-perfil.jpg" alt="Liset Garcell" class="cmodal-avatar">
+    <h3 data-es="¡Hola! Estoy aquí para ayudarte" data-en="Hi! I'm here to help you">¡Hola! Estoy aquí para ayudarte</h3>
+    <p data-es="Contáctame directamente por WhatsApp o email. Te respondo rápido 🙌" data-en="Contact me directly via WhatsApp or email. I'll respond quickly 🙌">Contáctame directamente por WhatsApp o email. Te respondo rápido 🙌</p>
+    <div class="cmodal-actions">
+      <a href="https://wa.me/18327635760?text=Hola%20Liset%2C%20me%20interesa%20una%20consulta%20gratis%20sobre%20seguros%20y%20taxes." class="cmodal-btn cmodal-btn-wa" target="_blank" rel="noopener">
+        <div class="cmodal-btn-ico">💬</div>
+        <div class="cmodal-btn-text">
+          <span class="cmodal-btn-label" data-es="WhatsApp — Respuesta inmediata" data-en="WhatsApp — Instant reply">WhatsApp — Respuesta inmediata</span>
+          <span class="cmodal-btn-val">(832) 763-5760</span>
+        </div>
+      </a>
+      <a href="mailto:liset.garcell05@gmail.com?subject=Consulta%20Gratis%20-%20Seguros%20y%20Taxes&body=Hola%20Liset%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios." class="cmodal-btn cmodal-btn-email">
+        <div class="cmodal-btn-ico">✉️</div>
+        <div class="cmodal-btn-text">
+          <span class="cmodal-btn-label" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</span>
+          <span class="cmodal-btn-val">liset.garcell05@gmail.com</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+
+      <a href="#hero" class="logo">
+        <div class="logo-mark"><span class="logo-mark-icon">🛡️</span></div>
+        <div class="logo-copy">
+          <div class="logo-name">Garcell Insurance &amp; Taxes</div>
+          <div class="logo-sub">
+            <span class="logo-sub-dot">◆</span>
+            <span class="logo-sub-wedo">Franquicia WeDo Autorizada</span>
+          </div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
+        <li><a href="#nosotros" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+        <li><a href="#testimonios" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
+        <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn active" onclick="setLang('es')" id="btn-es">ES</button>
+          <button class="lang-btn"        onclick="setLang('en')" id="btn-en">EN</button>
+        </div>
+        <a href="#" class="btn btn-teal nav-cta consulta-trigger" data-es="Consulta Gratis" data-en="Free Consultation">Consulta Gratis</a>
+        <button class="ham" id="hamBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="drawer" id="drawer">
+  <ul>
+    <li><a href="#servicios" class="dl" data-es="Servicios" data-en="Services">Servicios</a></li>
+    <li><a href="#nosotros"  class="dl" data-es="Nosotros"  data-en="About Us">Nosotros</a></li>
+    <li><a href="#testimonios" class="dl" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
+    <li><a href="#contacto"  class="dl" data-es="Contacto"  data-en="Contact">Contacto</a></li>
+  </ul>
+  <div class="drawer-foot">
+    <a href="tel:8327635760" class="btn btn-blue">📞 (832) 763-5760</a>
+    <a href="#" class="btn btn-teal dl consulta-trigger" data-es="Consulta Gratis" data-en="Free Consultation">Consulta Gratis</a>
+    <div class="drawer-lang">
+      <span data-es="Idioma:" data-en="Language:">Idioma:</span>
+      <button onclick="setLang('es')" id="dbtn-es" class="active">ES</button>
+      <button onclick="setLang('en')" id="dbtn-en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section id="hero">
+  <!-- Split background -->
+  <div class="hero-bg">
+    <div class="hero-bg-left"></div>
+    <div class="hero-bg-right"></div>
+    <div class="hero-bg-overlay"></div>
+  </div>
+
+  <!-- Main centered content -->
+  <div class="hero-inner">
+
+    <!-- Foto de perfil circular -->
+    <div class="hero-anim" style="animation-delay:.1s; margin-bottom:1.8rem; position:relative; display:inline-block;">
+      <div style="width:150px;height:150px;border-radius:50%;border:4px solid var(--gold);box-shadow:0 0 0 8px rgba(212,161,50,.2),0 8px 40px rgba(0,0,0,.5);overflow:hidden;animation:glowGold 3s ease-in-out infinite;margin:0 auto;">
+        <img src="liset-perfil.jpg" alt="Liset Garcell" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
+      <div style="position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),#4f8ef7);color:white;font-size:.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.32rem 1rem;border-radius:50px;white-space:nowrap;box-shadow:0 4px 14px rgba(37,99,235,.45);">CEO · Tax &amp; Insurance Advisor</div>
+    </div>
+
+    <div class="hero-franchise-badge hero-anim" style="animation-delay:.2s">
+      <span class="pulse-dot"></span>
+      <span data-es="— Franquicia WeDo Autorizada —" data-en="— Authorized WeDo Franchise —">— Franquicia WeDo Autorizada —</span>
+    </div>
+
+    <h1 class="hero-headline hero-anim" style="animation-delay:.3s">
+      PROTECCIÓN Y TRANSPARENCIA<br>PARA <span class="hl-gold">TU FUTURO</span>
+    </h1>
+
+    <p class="hero-subtitle hero-anim" style="animation-delay:.5s"
+       data-es="Servicios Integrales de Seguros y Asesoría Fiscal (Taxes)"
+       data-en="Comprehensive Insurance Services and Tax Advisory">
+      Servicios Integrales de Seguros y Asesoría Fiscal (Taxes)
+    </p>
+
+    <div class="hero-cta-row hero-anim" style="animation-delay:.68s">
+      <a href="#servicios" class="btn-hero-outline" data-es="Ver Servicios" data-en="Our Services">Ver Servicios</a>
+      <a href="#" class="btn-hero-gold consulta-trigger" data-es="Consulta Gratis" data-en="Free Consultation">Consulta Gratis</a>
+    </div>
+
+    <a href="#servicios" class="scroll-cue hero-anim" style="animation-delay:.85s; color:rgba(255,255,255,.5);">
+      <span style="color:rgba(255,255,255,.5)">Scroll</span>
+      <svg fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- Stats bar anchored at bottom -->
+  <div class="hero-stats">
+    <div class="hero-stat"><strong data-count="500" data-suffix="+">0+</strong><span data-es="Familias protegidas" data-en="Families protected">Familias protegidas</span></div>
+    <div class="hero-stat"><strong data-count="10"  data-suffix="+">0+</strong><span data-es="Años de experiencia" data-en="Years of experience">Años de experiencia</span></div>
+    <div class="hero-stat"><strong data-count="100" data-suffix="%">0%</strong><span data-es="En español" data-en="In Spanish">En español</span></div>
+    <div class="hero-stat"><strong data-count="5"   data-suffix="★">0★</strong><span data-es="Calificación de servicio" data-en="Service rating">Calificación de servicio</span></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
+<section id="servicios" class="sec">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="tag-pill" data-es="Lo que ofrecemos" data-en="What we offer">Lo que ofrecemos</span>
+      <div class="divider"></div>
+      <h2 class="sec-title" data-es="Servicios <em>especializados</em> para tu familia" data-en="<em>Specialized</em> services for your family">Servicios <em>especializados</em> para tu familia</h2>
+      <p class="sec-sub" data-es="Cubrimos todas tus necesidades de seguros y declaración de impuestos con atención personalizada y precios competitivos." data-en="We cover all your insurance and tax filing needs with personalized attention and competitive prices.">
+        Cubrimos todas tus necesidades de seguros y declaración de impuestos con atención personalizada y precios competitivos.
+      </p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-card-ico svc-ico-health">
+          <svg fill="none" viewBox="0 0 24 24" overflow="visible">
+            <path class="ekg-path" stroke-linecap="round" stroke-linejoin="round" d="M2 12h3.5l2.5-7 4 14 3-9 2 4H22"/>
+          </svg>
+        </div>
+        <h3 data-es="Seguro de Salud" data-en="Health Insurance">Seguro de Salud</h3>
+        <p data-es="Planes individuales y familiares. Te ayudamos a encontrar la mejor cobertura con los menores copagos y deducibles." data-en="Individual and family plans. We help you find the best coverage with the lowest copays and deductibles.">
+          Planes individuales y familiares. Te ayudamos a encontrar la mejor cobertura con los menores copagos y deducibles.
+        </p>
+        <span class="svc-card-tag">Health Insurance</span>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card-ico svc-ico-auto">
+          <svg viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="12" width="40" height="14" rx="3" fill="#bfdbfe"/>
+            <path d="M8 12l4-8h16l4 8" fill="#93c5fd"/>
+            <rect x="10" y="6" width="8" height="6" rx="1" fill="#e0f2fe"/>
+            <rect x="22" y="6" width="8" height="6" rx="1" fill="#e0f2fe"/>
+            <rect x="0" y="18" width="6" height="5" rx="1" fill="#93c5fd"/>
+            <rect x="42" y="18" width="6" height="5" rx="1" fill="#93c5fd"/>
+            <circle cx="13" cy="26" r="4" fill="#1d4ed8"/>
+            <circle cx="13" cy="26" r="2" fill="white"/>
+            <circle cx="35" cy="26" r="4" fill="#1d4ed8"/>
+            <circle cx="35" cy="26" r="2" fill="white"/>
+            <rect x="18" y="20" width="12" height="2" rx="1" fill="#60a5fa"/>
+            <circle cx="24" cy="14" r="1" fill="#1d4ed8"/>
+          </svg>
+        </div>
+        <h3 data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</h3>
+        <p data-es="Protección completa para tu vehículo. Responsabilidad, colisión, robo y asistencia en carretera las 24 horas." data-en="Full protection for your vehicle. Liability, collision, theft and 24-hour roadside assistance.">
+          Protección completa para tu vehículo. Responsabilidad, colisión, robo y asistencia en carretera las 24 horas.
+        </p>
+        <span class="svc-card-tag">Auto Insurance</span>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card-ico svc-ico-home">
+          <svg fill="none" stroke="#059669" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" fill="#d1fae5"/>
+            <path d="M9 21V12h6v9"/>
+            <path d="M14 8.5a2 2 0 11-4 0 2 2 0 014 0z" fill="#6ee7b7" stroke="none"/>
+          </svg>
+        </div>
+        <h3 data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</h3>
+        <p data-es="Protege tu mayor inversión. Coberturas para propietarios e inquilinos contra incendios, inundaciones y más." data-en="Protect your biggest investment. Coverage for homeowners and renters against fire, floods and more.">
+          Protege tu mayor inversión. Coberturas para propietarios e inquilinos contra incendios, inundaciones y más.
+        </p>
+        <span class="svc-card-tag">Home Insurance</span>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card-ico svc-ico-life">
+          <svg fill="#e11d48" stroke="#e11d48" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+        </div>
+        <h3 data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</h3>
+        <p data-es="Asegura el futuro de tu familia. Pólizas de vida temporal y permanente adaptadas a tu presupuesto y necesidades." data-en="Secure your family's future. Term and permanent life policies adapted to your budget and needs.">
+          Asegura el futuro de tu familia. Pólizas de vida temporal y permanente adaptadas a tu presupuesto y necesidades.
+        </p>
+        <span class="svc-card-tag">Life Insurance</span>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card-ico svc-ico-tax">
+          <svg fill="none" stroke="#d97706" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" fill="#fef3c7"/>
+            <path d="M8 7h8M8 11h8M8 15h5"/>
+            <path d="M15 17l1.5 1.5L19 16"/>
+          </svg>
+        </div>
+        <h3 data-es="Preparación de Taxes" data-en="Tax Preparation">Preparación de Taxes</h3>
+        <p data-es="Declaración federal y estatal. Maximizamos tu reembolso y evitamos errores costosos. Trabajadores independientes y empleados." data-en="Federal and state tax returns. We maximize your refund and avoid costly mistakes. Self-employed and employees.">
+          Declaración federal y estatal. Maximizamos tu reembolso y evitamos errores costosos. Trabajadores independientes y empleados.
+        </p>
+        <span class="svc-card-tag">Tax Preparation</span>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card-ico svc-ico-itin">
+          <svg fill="none" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" stroke="#0284c7" stroke-width="1.8" fill="#e0f2fe" class="clock-body"/>
+            <path d="M12 7v5l3.5 2" stroke="#0284c7" stroke-width="1.8" class="clock-hand"/>
+            <circle cx="12" cy="12" r="1.2" fill="#0284c7" class="clock-body"/>
+          </svg>
+        </div>
+        <h3 data-es="ITIN &amp; Créditos" data-en="ITIN &amp; Tax Credits">ITIN &amp; Créditos</h3>
+        <p data-es="Tramitamos tu ITIN, crédito tributario por hijos (EITC) y asesoría para trabajadores independientes sin número social." data-en="We process your ITIN, child tax credits (EITC) and advisory for self-employed workers without SSN.">
+          Tramitamos tu ITIN, crédito tributario por hijos (EITC) y asesoría para trabajadores independientes sin número social.
+        </p>
+        <span class="svc-card-tag">ITIN / Tax Credits</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ WHY US ═══════════════════════════ -->
+<section id="nosotros" class="sec sec-alt">
+  <div class="wrap">
+    <div class="why-grid">
+
+      <div class="why-visual reveal">
+        <div class="why-ring"></div>
+        <div class="why-img">
+          <img src="liset-perfil.jpg" alt="Liset Garcell" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:var(--radius-lg);display:block;" />
+          <div class="why-img-caption">
+            <div class="why-img-caption-ico">🏆</div>
+            <div>
+              <strong data-es="Tu aliada de confianza" data-en="Your trusted advisor">Tu aliada de confianza</strong>
+              <span data-es="Miami, FL · +10 años de experiencia" data-en="Miami, FL · 10+ years experience">Miami, FL · +10 años de experiencia</span>
+            </div>
+          </div>
+        </div>
+        <div class="why-float" style="animation:float 3.5s ease-in-out infinite;">
+          <strong style="color:var(--gold);font-size:1.5rem;">A+</strong>
+          <span data-es="Calificación<br>de servicio" data-en="Service<br>rating">Calificación<br>de servicio</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <span class="tag-pill" data-es="Por qué elegirnos" data-en="Why choose us">Por qué elegirnos</span>
+        <div class="divider"></div>
+        <h2 class="sec-title" data-es="Tu aliado de <em>confianza</em> en Miami" data-en="Your trusted <em>partner</em> in Miami">Tu aliado de <em>confianza</em> en Miami</h2>
+        <p class="sec-sub" style="margin-bottom:2rem" data-es="Entendemos las necesidades de la comunidad hispana. Hablamos tu idioma y trabajamos para darte la mejor protección." data-en="We understand the needs of the Hispanic community. We speak your language and work to give you the best protection.">
+          Entendemos las necesidades de la comunidad hispana. Hablamos tu idioma y trabajamos para darte la mejor protección.
+        </p>
+
+        <ul class="why-items">
+          <li class="why-item">
+            <div class="why-icon">✅</div>
+            <div>
+              <h4 data-es="Atención 100% en Español" data-en="100% Spanish Service">Atención 100% en Español</h4>
+              <p data-es="Comunicación clara y sin barreras para que entiendas cada detalle de tu póliza o declaración de impuestos." data-en="Clear communication without barriers so you understand every detail of your policy or tax return.">
+                Comunicación clara y sin barreras para que entiendas cada detalle de tu póliza o declaración de impuestos.
+              </p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-icon">💰</div>
+            <div>
+              <h4 data-es="Precios Competitivos" data-en="Competitive Prices">Precios Competitivos</h4>
+              <p data-es="Comparamos múltiples aseguradoras para ofrecerte la mejor cobertura al precio más bajo posible." data-en="We compare multiple insurers to offer you the best coverage at the lowest possible price.">
+                Comparamos múltiples aseguradoras para ofrecerte la mejor cobertura al precio más bajo posible.
+              </p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-icon">⚡</div>
+            <div>
+              <h4 data-es="Respuesta el Mismo Día" data-en="Same-Day Response">Respuesta el Mismo Día</h4>
+              <p data-es="Respondemos el mismo día. No eres un número, eres parte de nuestra familia de clientes en Miami." data-en="We respond the same day. You are not a number, you are part of our client family in Miami.">
+                Respondemos el mismo día. No eres un número, eres parte de nuestra familia de clientes en Miami.
+              </p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-icon">🏆</div>
+            <div>
+              <h4 data-es="Franquicia WeDo Certificada" data-en="Certified WeDo Franchise">Franquicia WeDo Certificada</h4>
+              <p data-es="Respaldo de una red nacional de profesionales con estándares de calidad reconocidos en toda la Florida." data-en="Backed by a national network of professionals with recognized quality standards throughout Florida.">
+                Respaldo de una red nacional de profesionales con estándares de calidad reconocidos en toda la Florida.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ TESTIMONIALS ═══════════════════════════ -->
+<section id="testimonios" class="sec">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="tag-pill" data-es="Testimonios" data-en="Testimonials">Testimonios</span>
+      <div class="divider"></div>
+      <h2 class="sec-title" data-es="Lo que dicen nuestros <em>clientes</em>" data-en="What our <em>clients</em> say">Lo que dicen nuestros <em>clientes</em></h2>
+      <p class="sec-sub" data-es="La satisfacción de nuestros clientes es el mejor reflejo de nuestro trabajo diario." data-en="The satisfaction of our clients is the best reflection of our daily work.">
+        La satisfacción de nuestros clientes es el mejor reflejo de nuestro trabajo diario.
+      </p>
+    </div>
+
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="test-text" data-es='"Me explicaron todo sobre mi seguro de salud paso a paso. Encontraron un plan que se ajusta perfecto a mi presupuesto familiar. ¡Los recomiendo al 100%!"' data-en='"They explained everything about my health insurance step by step. They found a plan that fits my family budget perfectly. 100% recommended!"'>
+          "Me explicaron todo sobre mi seguro de salud paso a paso. Encontraron un plan que se ajusta perfecto a mi presupuesto familiar. ¡Los recomiendo al 100%!"
+        </p>
+        <div class="test-author">
+          <div class="test-av">MR</div>
+          <div>
+            <div class="test-name">María Rodríguez</div>
+            <div class="test-loc">📍 Miami, FL</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="test-text" data-es='"Llevo 5 años haciendo mis taxes con Garcell y siempre consigo el máximo reembolso. Son honestos, rápidos y muy profesionales. No los cambio por nada."' data-en='"I have been filing my taxes with Garcell for 5 years and I always get the maximum refund. They are honest, fast and very professional. I would not change them for anything."'>
+          "Llevo 5 años haciendo mis taxes con Garcell y siempre consigo el máximo reembolso. Son honestos, rápidos y muy profesionales. No los cambio por nada."
+        </p>
+        <div class="test-author">
+          <div class="test-av">CL</div>
+          <div>
+            <div class="test-name">Carlos López</div>
+            <div class="test-loc">📍 Miami, FL</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="test-text" data-es='"Me ayudaron a obtener mi ITIN y el crédito tributario por mis hijos. El proceso fue rápido y sin complicaciones. Muy agradecida con todo el equipo de Garcell."' data-en='"They helped me get my ITIN and the child tax credit. The process was quick and hassle-free. Very grateful to the entire Garcell team."'>
+          "Me ayudaron a obtener mi ITIN y el crédito tributario por mis hijos. El proceso fue rápido y sin complicaciones. Muy agradecida con todo el equipo de Garcell."
+        </p>
+        <div class="test-author">
+          <div class="test-av">AG</div>
+          <div>
+            <div class="test-name">Ana Gómez</div>
+            <div class="test-loc">📍 Hialeah, FL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CONTACT (movido al final) ═══════════════════════════ -->
+<section id="contacto" class="sec sec-alt" style="display:none">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="tag-pill" data-es="Contáctanos" data-en="Contact Us">Contáctanos</span>
+      <div class="divider"></div>
+      <h2 class="sec-title" data-es="Hablemos <em>hoy mismo</em>" data-en="Let's talk <em>today</em>">Hablemos <em>hoy mismo</em></h2>
+      <p class="sec-sub" data-es="Recibe una consulta gratuita sin compromiso. Estamos listos para ayudarte en Miami, FL." data-en="Get a free no-obligation consultation. We are ready to help you in Miami, FL.">
+        Recibe una consulta gratuita sin compromiso. Estamos listos para ayudarte en Miami, FL.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="reveal">
+        <h3 class="contact-info-title" data-es="Estamos aquí para ti" data-en="We are here for you">Estamos aquí para ti</h3>
+        <p class="contact-info-desc" data-es="Comunícate con nosotros por el canal que prefieras. Respondemos rápido y siempre en español." data-en="Reach us through the channel you prefer. We respond quickly and always in Spanish.">
+          Comunícate con nosotros por el canal que prefieras. Respondemos rápido y siempre en español.
+        </p>
+
+        <div class="ci-item">
+          <div class="ci-ico">📞</div>
+          <div>
+            <div class="ci-label" data-es="Teléfono / WhatsApp" data-en="Phone / WhatsApp">Teléfono / WhatsApp</div>
+            <div class="ci-val"><a href="tel:8327635760">(832) 763-5760</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">✉️</div>
+          <div>
+            <div class="ci-label" data-es="Email" data-en="Email">Email</div>
+            <div class="ci-val"><a href="mailto:liset.garcell05@gmail.com">liset.garcell05@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">📍</div>
+          <div>
+            <div class="ci-label" data-es="Dirección" data-en="Address">Dirección</div>
+            <div class="ci-val">420 SW 7th Street,<br>Miami, FL 33130</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">🕐</div>
+          <div>
+            <div class="ci-label" data-es="Horario" data-en="Business Hours">Horario</div>
+            <div class="ci-val" data-es="Lun – Vie: 9am – 6pm<br>Sábado: 10am – 2pm" data-en="Mon – Fri: 9am – 6pm<br>Saturday: 10am – 2pm">
+              Lun – Vie: 9am – 6pm<br>Sábado: 10am – 2pm
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="cf-card reveal">
+        <h3 data-es="Envíanos un mensaje" data-en="Send us a message">Envíanos un mensaje</h3>
+
+        <form action="https://formsubmit.co/liset.garcell05@gmail.com" method="POST">
+          <input type="hidden" name="_subject"  value="Nuevo contacto — Garcell Insurance & Taxes">
+          <input type="hidden" name="_captcha"  value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="Gracias por contactar a Garcell Insurance & Taxes. Nos comunicaremos contigo muy pronto. / Thank you for contacting Garcell Insurance & Taxes. We will get back to you shortly.">
+
+          <div class="fg-row">
+            <div class="fg">
+              <label data-es="Nombre *" data-en="Name *">Nombre *</label>
+              <input type="text" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="fg">
+              <label data-es="Teléfono *" data-en="Phone *">Teléfono *</label>
+              <input type="tel" name="telefono" placeholder="(832) 000-0000" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label data-es="Email *" data-en="Email *">Email *</label>
+            <input type="email" name="email" placeholder="tu@email.com" required>
+          </div>
+          <div class="fg">
+            <label data-es="Servicio de interés *" data-en="Service of interest *">Servicio de interés *</label>
+            <select name="servicio" required>
+              <option value="" disabled selected data-es="Selecciona un servicio..." data-en="Select a service...">Selecciona un servicio...</option>
+              <option data-es="Seguro de Salud" data-en="Health Insurance">Seguro de Salud</option>
+              <option data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</option>
+              <option data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</option>
+              <option data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</option>
+              <option data-es="Preparación de Taxes" data-en="Tax Preparation">Preparación de Taxes</option>
+              <option data-es="ITIN / Créditos Tributarios" data-en="ITIN / Tax Credits">ITIN / Créditos Tributarios</option>
+              <option data-es="Otro" data-en="Other">Otro</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label data-es="Mensaje" data-en="Message">Mensaje</label>
+            <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-blue btn-send" data-es="✉ Enviar Mensaje" data-en="✉ Send Message">✉ Enviar Mensaje</button>
+          <p class="form-note" data-es="Al enviar aceptas nuestra política de privacidad. Recibirás una confirmación por email." data-en="By submitting you accept our privacy policy. You will receive an email confirmation.">
+            Al enviar aceptas nuestra política de privacidad. Recibirás una confirmación por email.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ÁREA DE COBERTURA ═══════════════════════════ -->
+<section id="cobertura" style="background:#f8f9fb;padding:5rem 0;text-align:center;">
+  <div class="wrap">
+    <p style="font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0 0 .7rem;" data-es="ÁREA DE COBERTURA" data-en="COVERAGE AREA">ÁREA DE COBERTURA</p>
+    <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#0f1f3d;margin:0 0 1rem;line-height:1.15;" data-es="Disponible en 9 estados" data-en="Available in 9 states">Disponible en 9 estados</h2>
+    <p style="color:#555;font-size:1rem;max-width:480px;margin:0 auto 3rem;line-height:1.7;" data-es="Cuento con licencia activa para operar en estos estados, sirviendo a la comunidad hispana con profesionalismo." data-en="I hold an active license to operate in these states, serving the Hispanic community with professionalism.">Cuento con licencia activa para operar en estos estados, sirviendo a la comunidad hispana con profesionalismo.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.4rem;max-width:980px;margin:0 auto;">
+
+      <!-- Florida -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="position:relative;height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=600&q=80" alt="Miami, FL" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;bottom:12px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.3rem .7rem;border-radius:20px;backdrop-filter:blur(4px);">Miami, FL</span>
+        </div>
+        <div style="padding:1.1rem 1rem 1.3rem;">
+          <h3 style="font-size:1.3rem;font-weight:900;color:#0f1f3d;margin:0 0 .3rem;">Florida</h3>
+          <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0;">ESTADO COMPLETO</p>
+        </div>
+      </div>
+
+      <!-- Texas -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="position:relative;height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1545194445-dddb8f4487c6?w=600&q=80" alt="Houston, TX" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;bottom:12px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.3rem .7rem;border-radius:20px;backdrop-filter:blur(4px);">Houston, TX</span>
+        </div>
+        <div style="padding:1.1rem 1rem 1.3rem;">
+          <h3 style="font-size:1.3rem;font-weight:900;color:#0f1f3d;margin:0 0 .3rem;">Texas</h3>
+          <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0;">ESTADO COMPLETO</p>
+        </div>
+      </div>
+
+      <!-- Utah -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="position:relative;height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Salt Lake City, UT" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;bottom:12px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.3rem .7rem;border-radius:20px;backdrop-filter:blur(4px);">Salt Lake City, UT</span>
+        </div>
+        <div style="padding:1.1rem 1rem 1.3rem;">
+          <h3 style="font-size:1.3rem;font-weight:900;color:#0f1f3d;margin:0 0 .3rem;">Utah</h3>
+          <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0;">ESTADO COMPLETO</p>
+        </div>
+      </div>
+
+      <!-- Oregon -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="position:relative;height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1502175353174-a7a70e73b362?w=600&q=80" alt="Portland, OR" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;bottom:12px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.3rem .7rem;border-radius:20px;backdrop-filter:blur(4px);">Portland, OR</span>
+        </div>
+        <div style="padding:1.1rem 1rem 1.3rem;">
+          <h3 style="font-size:1.3rem;font-weight:900;color:#0f1f3d;margin:0 0 .3rem;">Oregon</h3>
+          <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0;">ESTADO COMPLETO</p>
+        </div>
+      </div>
+
+      <!-- North Carolina -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="position:relative;height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1570612861542-284f4c12e75f?w=600&q=80" alt="Charlotte, NC" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;bottom:12px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.3rem .7rem;border-radius:20px;backdrop-filter:blur(4px);">Charlotte, NC</span>
+        </div>
+        <div style="padding:1.1rem 1rem 1.3rem;">
+          <h3 style="font-size:1.3rem;font-weight:900;color:#0f1f3d;margin:0 0 .3rem;">North Carolina</h3>
+          <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0;">ESTADO COMPLETO</p>
+        </div>
+      </div>
+
+      <!-- Nebraska -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="position:relative;height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1612977741878-8ddc3f7de2d1?w=600&q=80" alt="Omaha, NE" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;bottom:12px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.3rem .7rem;border-radius:20px;backdrop-filter:blur(4px);">Omaha, NE</span>
+        </div>
+        <div style="padding:1.1rem 1rem 1.3rem;">
+          <h3 style="font-size:1.3rem;font-weight:900;color:#0f1f3d;margin:0 0 .3rem;">Nebraska</h3>
+          <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0;">ESTADO COMPLETO</p>
+        </div>
+      </div>
+
+      <!-- Georgia -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="position:relative;height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1575917649705-5b59aaa12e6b?w=600&q=80" alt="Atlanta, GA" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;bottom:12px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.3rem .7rem;border-radius:20px;backdrop-filter:blur(4px);">Atlanta, GA</span>
+        </div>
+        <div style="padding:1.1rem 1rem 1.3rem;">
+          <h3 style="font-size:1.3rem;font-weight:900;color:#0f1f3d;margin:0 0 .3rem;">Georgia</h3>
+          <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0;">ESTADO COMPLETO</p>
+        </div>
+      </div>
+
+      <!-- Illinois -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="position:relative;height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=600&q=80" alt="Chicago, IL" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;bottom:12px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.3rem .7rem;border-radius:20px;backdrop-filter:blur(4px);">Chicago, IL</span>
+        </div>
+        <div style="padding:1.1rem 1rem 1.3rem;">
+          <h3 style="font-size:1.3rem;font-weight:900;color:#0f1f3d;margin:0 0 .3rem;">Illinois</h3>
+          <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0;">ESTADO COMPLETO</p>
+        </div>
+      </div>
+
+      <!-- Wisconsin -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="position:relative;height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&q=80" alt="Milwaukee, WI" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;bottom:12px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:.78rem;padding:.3rem .7rem;border-radius:20px;backdrop-filter:blur(4px);">Milwaukee, WI</span>
+        </div>
+        <div style="padding:1.1rem 1rem 1.3rem;">
+          <h3 style="font-size:1.3rem;font-weight:900;color:#0f1f3d;margin:0 0 .3rem;">Wisconsin</h3>
+          <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:#d4a132;font-weight:700;margin:0;">ESTADO COMPLETO</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+<section id="contacto2" class="sec sec-alt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="tag-pill" data-es="Contáctanos" data-en="Contact Us">Contáctanos</span>
+      <div class="divider"></div>
+      <h2 class="sec-title" data-es="Hablemos <em>hoy mismo</em>" data-en="Let's talk <em>today</em>">Hablemos <em>hoy mismo</em></h2>
+      <p class="sec-sub" data-es="Recibe una consulta gratuita sin compromiso. Estamos listos para ayudarte en Miami, FL." data-en="Get a free no-obligation consultation. We are ready to help you in Miami, FL.">
+        Recibe una consulta gratuita sin compromiso. Estamos listos para ayudarte en Miami, FL.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="reveal">
+        <h3 class="contact-info-title" data-es="Estamos aquí para ti" data-en="We are here for you">Estamos aquí para ti</h3>
+        <p class="contact-info-desc" data-es="Comunícate con nosotros por el canal que prefieras. Respondemos rápido y siempre en español." data-en="Reach us through the channel you prefer. We respond quickly and always in Spanish.">
+          Comunícate con nosotros por el canal que prefieras. Respondemos rápido y siempre en español.
+        </p>
+        <div class="ci-item">
+          <div class="ci-ico">📞</div>
+          <div>
+            <div class="ci-label" data-es="Teléfono / WhatsApp" data-en="Phone / WhatsApp">Teléfono / WhatsApp</div>
+            <div class="ci-val"><a href="tel:8327635760">(832) 763-5760</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">✉️</div>
+          <div>
+            <div class="ci-label" data-es="Email" data-en="Email">Email</div>
+            <div class="ci-val"><a href="mailto:liset.garcell05@gmail.com">liset.garcell05@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">📍</div>
+          <div>
+            <div class="ci-label" data-es="Dirección" data-en="Address">Dirección</div>
+            <div class="ci-val">420 SW 7th Street,<br>Miami, FL 33130</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">🕐</div>
+          <div>
+            <div class="ci-label" data-es="Horario" data-en="Business Hours">Horario</div>
+            <div class="ci-val" data-es="Lun – Vie: 9am – 6pm<br>Sábado: 10am – 2pm" data-en="Mon – Fri: 9am – 6pm<br>Saturday: 10am – 2pm">
+              Lun – Vie: 9am – 6pm<br>Sábado: 10am – 2pm
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="cf-card reveal">
+        <h3 data-es="Envíanos un mensaje" data-en="Send us a message">Envíanos un mensaje</h3>
+        <form action="https://formsubmit.co/liset.garcell05@gmail.com" method="POST">
+          <input type="hidden" name="_subject"  value="Nuevo contacto — Garcell Insurance & Taxes">
+          <input type="hidden" name="_captcha"  value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="Gracias por contactar a Garcell Insurance & Taxes. Nos comunicaremos contigo muy pronto. / Thank you for contacting Garcell Insurance & Taxes. We will get back to you shortly.">
+          <div class="fg-row">
+            <div class="fg">
+              <label data-es="Nombre *" data-en="Name *">Nombre *</label>
+              <input type="text" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="fg">
+              <label data-es="Teléfono *" data-en="Phone *">Teléfono *</label>
+              <input type="tel" name="telefono" placeholder="(832) 000-0000" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label data-es="Email *" data-en="Email *">Email *</label>
+            <input type="email" name="email" placeholder="tu@email.com" required>
+          </div>
+          <div class="fg">
+            <label data-es="Servicio de interés *" data-en="Service of interest *">Servicio de interés *</label>
+            <select name="servicio" required>
+              <option value="" disabled selected data-es="Selecciona un servicio..." data-en="Select a service...">Selecciona un servicio...</option>
+              <option data-es="Seguro de Salud" data-en="Health Insurance">Seguro de Salud</option>
+              <option data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</option>
+              <option data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</option>
+              <option data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</option>
+              <option data-es="Preparación de Taxes" data-en="Tax Preparation">Preparación de Taxes</option>
+              <option data-es="ITIN / Créditos Tributarios" data-en="ITIN / Tax Credits">ITIN / Créditos Tributarios</option>
+              <option data-es="Otro" data-en="Other">Otro</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label data-es="Mensaje" data-en="Message">Mensaje</label>
+            <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-blue btn-send" data-es="✉ Enviar Mensaje" data-en="✉ Send Message">✉ Enviar Mensaje</button>
+          <p class="form-note" data-es="Al enviar aceptas nuestra política de privacidad. Recibirás una confirmación por email." data-en="By submitting you accept our privacy policy. You will receive an email confirmation.">
+            Al enviar aceptas nuestra política de privacidad. Recibirás una confirmación por email.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="wrap">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <div class="logo-mark">🏠</div>
+            <div class="logo-copy">
+              <div class="logo-name">Garcell Insurance &amp; Taxes</div>
+              <div class="logo-sub">● Franquicia WeDo</div>
+            </div>
+          </a>
+          <p class="footer-brand-desc" data-es="Protegiendo familias hispanas con seguros de calidad y preparación de impuestos honesta en Miami, FL. Tu confianza es nuestra mayor recompensa." data-en="Protecting Hispanic families with quality insurance and honest tax preparation in Miami, FL. Your trust is our greatest reward.">
+            Protegiendo familias hispanas con seguros de calidad y preparación de impuestos honesta en Miami, FL. Tu confianza es nuestra mayor recompensa.
+          </p>
+          <div class="socials">
+            <a href="#" class="soc-link" aria-label="Facebook">f</a>
+            <a href="#" class="soc-link" aria-label="Instagram">📷</a>
+            <a href="https://wa.me/18327635760" class="soc-link" aria-label="WhatsApp">💬</a>
+            <a href="#" class="soc-link" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4 data-es="Servicios" data-en="Services">Servicios</h4>
+          <ul>
+            <li><a href="#servicios" data-es="Seguro de Salud" data-en="Health Insurance">Seguro de Salud</a></li>
+            <li><a href="#servicios" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
+            <li><a href="#servicios" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
+            <li><a href="#servicios" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
+            <li><a href="#servicios" data-es="Preparación de Taxes" data-en="Tax Preparation">Preparación de Taxes</a></li>
+            <li><a href="#servicios" data-es="ITIN &amp; Créditos" data-en="ITIN &amp; Tax Credits">ITIN &amp; Créditos</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-col">
+          <h4 data-es="Empresa" data-en="Company">Empresa</h4>
+          <ul>
+            <li><a href="#nosotros" data-es="Quiénes somos" data-en="About Us">Quiénes somos</a></li>
+            <li><a href="#testimonios" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
+            <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
+            <li><a href="#" data-es="Franquicia WeDo" data-en="WeDo Franchise">Franquicia WeDo</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
+          <address>
+            <a href="tel:8327635760">📞 (832) 763-5760</a><br>
+            <a href="mailto:liset.garcell05@gmail.com">✉️ liset.garcell05@gmail.com</a><br><br>
+            📍 420 SW 7th Street<br>
+            Miami, FL 33130<br><br>
+            <span data-es="🕐 Lun–Vie 9am–6pm<br>Sáb 10am–2pm" data-en="🕐 Mon–Fri 9am–6pm<br>Sat 10am–2pm">🕐 Lun–Vie 9am–6pm<br>Sáb 10am–2pm</span>
+          </address>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-license">
+    <div class="wrap">
+      <div class="lic-label" data-es="🪪 Seguros en" data-en="🪪 Insurance Licensed in">🪪 Seguros en</div>
+      <div class="lic-states">
+        <span class="lic-state">Florida</span>
+        <span class="lic-state">Texas</span>
+        <span class="lic-state">Utah</span>
+        <span class="lic-state">Oregon</span>
+        <span class="lic-state">North Carolina</span>
+        <span class="lic-state">Nebraska</span>
+        <span class="lic-state">Georgia</span>
+        <span class="lic-state">Illinois</span>
+        <span class="lic-state">Wisconsin</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="wrap">
+      <div class="footer-bottom-inner">
+        <span data-es="© 2026 Garcell Insurance &amp; Taxes. Todos los derechos reservados." data-en="© 2026 Garcell Insurance &amp; Taxes. All rights reserved.">
+          © 2026 Garcell Insurance &amp; Taxes. Todos los derechos reservados.
+        </span>
+        <span data-es="Hecho con ❤️ para la comunidad hispana | <a href='#'>Franquicia WeDo</a>" data-en="Made with ❤️ for the Hispanic community | <a href='#'>WeDo Franchise</a>">
+          Hecho con ❤️ para la comunidad hispana | <a href="#">Franquicia WeDo</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="stt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+<script>
+/* ─── Language System ─────────────────────────────── */
+let currentLang = 'es';
+
+function setLang(lang) {
+  currentLang = lang;
+
+  // Update all [data-es] / [data-en] elements
+  document.querySelectorAll('[data-es]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (!text) return;
+    // Use innerHTML to support tags like <em>, <br>, <span>
+    if (text.includes('<') || text.includes('&')) {
+      el.innerHTML = text;
+    } else {
+      el.textContent = text;
+    }
+  });
+
+  // Navbar lang buttons
+  ['es','en'].forEach(l => {
+    document.getElementById('btn-' + l)?.classList.toggle('active', l === lang);
+    document.getElementById('dbtn-' + l)?.classList.toggle('active', l === lang);
+  });
+
+  // Update <html lang>
+  document.documentElement.lang = lang;
+
+  // Update form placeholders
+  const ph = {
+    es: { name: 'Tu nombre', phone: '(832) 000-0000', email: 'tu@email.com', msg: '¿En qué podemos ayudarte?' },
+    en: { name: 'Your name', phone: '(832) 000-0000', email: 'your@email.com', msg: 'How can we help you?' }
+  };
+  const [n,p,e,m] = ['[name=nombre]','[name=telefono]','[name=email]','[name=mensaje]'].map(s=>document.querySelector(s));
+  if(n) n.placeholder = ph[lang].name;
+  if(p) p.placeholder = ph[lang].phone;
+  if(e) e.placeholder = ph[lang].email;
+  if(m) m.placeholder = ph[lang].msg;
+
+  // Update select first option
+  const sel = document.querySelector('select[name=servicio]');
+  if(sel && sel.options[0]) {
+    sel.options[0].text = lang === 'es' ? 'Selecciona un servicio...' : 'Select a service...';
+  }
+}
+
+/* ─── Navbar scroll ───────────────────────────────── */
+const nav = document.getElementById('nav');
+const stt = document.getElementById('stt');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('solid', window.scrollY > 40);
+  stt.classList.toggle('show', window.scrollY > 500);
+}, { passive: true });
+
+/* ─── Hamburger / Drawer ──────────────────────────── */
+const hamBtn = document.getElementById('hamBtn');
+const drawer = document.getElementById('drawer');
+
+hamBtn.addEventListener('click', () => {
+  hamBtn.classList.toggle('open');
+  drawer.classList.toggle('open');
+  document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+});
+
+document.querySelectorAll('.dl').forEach(link => {
+  link.addEventListener('click', () => {
+    hamBtn.classList.remove('open');
+    drawer.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+/* ─── Scroll reveal ───────────────────────────────── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+/* ─── Stagger reveal for service cards ───────────── */
+const cardObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const cards = e.target.querySelectorAll('.svc-card');
+      cards.forEach((c, i) => {
+        setTimeout(() => c.classList.add('card-in'), i * 100);
+      });
+      cardObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+const svcGrid = document.querySelector('.svc-grid');
+if (svcGrid) cardObs.observe(svcGrid);
+
+/* ─── Counter animation ───────────────────────────── */
+function animCount(el, end, suffix, duration) {
+  const start = performance.now();
+  function step(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(eased * end) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+/* trigger counters when stats bar enters view */
+function runCounters() {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    if (el.dataset.counted) return;
+    el.dataset.counted = '1';
+    animCount(el, +el.dataset.count, el.dataset.suffix || '', 2000);
+  });
+}
+const statsBar = document.querySelector('.hero-stats');
+if (statsBar) {
+  const cntObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { runCounters(); cntObs.disconnect(); } });
+  }, { threshold: 0 });
+  cntObs.observe(statsBar);
+  /* fallback: fire after 1.5s if IO never triggered */
+  setTimeout(runCounters, 1500);
+}
+
+/* ─── Hero particles ──────────────────────────────── */
+/* ─── Consulta Modal ─────────────────────────────── */
+function openConsulta(e) { e && e.preventDefault(); document.getElementById('consultaModal').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeConsultaBtn() { document.getElementById('consultaModal').classList.remove('open'); document.body.style.overflow=''; }
+function closeConsulta(e) { if(e.target===e.currentTarget) closeConsultaBtn(); }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeConsultaBtn(); });
+document.querySelectorAll('.consulta-trigger').forEach(el => el.addEventListener('click', openConsulta));
+
+const pContainer = document.getElementById('heroParticles');
+if (pContainer) {
+  [
+    [8,15,6,'7s','0s'],[90,70,4,'9s','1.2s'],[30,90,7,'8s','0.6s'],
+    [75,5,5,'11s','2s'],[50,50,3,'6s','3s'],[12,55,8,'10s','1.8s'],
+    [65,30,4,'8.5s','0.9s'],[20,78,5,'7.5s','2.4s']
+  ].forEach(([top,left,size,dur,delay]) => {
+    const s = document.createElement('span');
+    s.style.cssText = `top:${top}%;left:${left}%;width:${size}px;height:${size}px;animation:floatPart ${dur} ease-in-out ${delay} infinite`;
+    pContainer.appendChild(s);
+  });
+}
+</script>
+</body>
+</html>
