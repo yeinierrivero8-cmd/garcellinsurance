@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garcell Insurance & Taxes | Franquicia WeDo | Miami, FL</title>
@@ -1738,12 +1739,7 @@
       <div class="cf-card reveal">
         <h3 data-es="Envíanos un mensaje" data-en="Send us a message">Envíanos un mensaje</h3>
 
-        <form action="https://formsubmit.co/liset.garcell05@gmail.com" method="POST">
-          <input type="hidden" name="_subject"  value="Nuevo contacto — Garcell Insurance & Taxes">
-          <input type="hidden" name="_captcha"  value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_autoresponse" value="Gracias por contactar a Garcell Insurance & Taxes. Nos comunicaremos contigo muy pronto. / Thank you for contacting Garcell Insurance & Taxes. We will get back to you shortly.">
-
+        <form id="contactForm1" onsubmit="sendGarcellEmail(event,this)">
           <div class="fg-row">
             <div class="fg">
               <label data-es="Nombre *" data-en="Name *">Nombre *</label>
@@ -2010,11 +2006,7 @@
       <!-- Form -->
       <div class="cf-card reveal">
         <h3 data-es="Envíanos un mensaje" data-en="Send us a message">Envíanos un mensaje</h3>
-        <form action="https://formsubmit.co/liset.garcell05@gmail.com" method="POST">
-          <input type="hidden" name="_subject"  value="Nuevo contacto — Garcell Insurance & Taxes">
-          <input type="hidden" name="_captcha"  value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_autoresponse" value="Gracias por contactar a Garcell Insurance & Taxes. Nos comunicaremos contigo muy pronto. / Thank you for contacting Garcell Insurance & Taxes. We will get back to you shortly.">
+        <form id="contactForm2" onsubmit="sendGarcellEmail(event,this)">
           <div class="fg-row">
             <div class="fg">
               <label data-es="Nombre *" data-en="Name *">Nombre *</label>
@@ -2290,6 +2282,50 @@ if (statsBar) {
 }
 
 /* ─── Hero particles ──────────────────────────────── */
+/* ─── EmailJS ────────────────────────────────────── */
+const EMAILJS_SERVICE_ID  = 'service-qwzxbak';
+const EMAILJS_TEMPLATE_ID = 'template-bkdq1fp';
+const EMAILJS_PUBLIC_KEY  = 'L7vYYo6IvWiYpWdeX';
+
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+function sendGarcellEmail(e, form) {
+  e.preventDefault();
+  const btn = form.querySelector('button[type=submit]');
+  const origText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = '⏳ Enviando...';
+
+  const params = {
+    nombre:   form.querySelector('[name=nombre]').value,
+    telefono: form.querySelector('[name=telefono]').value,
+    email:    form.querySelector('[name=email]').value,
+    servicio: form.querySelector('[name=servicio]').value,
+    mensaje:  form.querySelector('[name=mensaje]').value,
+  };
+
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+    .then(() => {
+      btn.textContent = '✅ ¡Mensaje enviado!';
+      btn.style.background = '#16a34a';
+      form.reset();
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = origText;
+        btn.style.background = '';
+      }, 4000);
+    })
+    .catch(() => {
+      btn.textContent = '❌ Error, intenta de nuevo';
+      btn.style.background = '#dc2626';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = origText;
+        btn.style.background = '';
+      }, 4000);
+    });
+}
+
 /* ─── Consulta Modal ─────────────────────────────── */
 function openConsulta(e) { e && e.preventDefault(); document.getElementById('consultaModal').classList.add('open'); document.body.style.overflow='hidden'; }
 function closeConsultaBtn() { document.getElementById('consultaModal').classList.remove('open'); document.body.style.overflow=''; }
